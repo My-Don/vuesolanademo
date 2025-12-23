@@ -183,6 +183,15 @@ source ~/.bashrc
 ```sh
 rustc --version && solana --version && anchor --version && surfpool --version && node --version && yarn --version
 ```
+控制台打印数据如下即安装成功:
+```sh
+rustc 1.92.0 (ded5c06cf 2025-12-08)
+solana-cli 3.0.13 (src:90098d26; feat:3604001754, client:Agave)
+anchor-cli 0.32.1
+surfpool 1.0.0-rc1
+v24.10.0
+1.22.22
+```
 
 安装wsl插件到vscode,请查看如下网址
 ```sh
