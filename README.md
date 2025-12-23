@@ -173,7 +173,7 @@ Node.js: v24.10.0
 Yarn: 1.22.1
 ```
 
-永久保存配置
+永久保存环境变量
 ```sh
 echo 'export PATH="/root/.local/share/solana/install/active_release/bin:$PATH" ' >> ~/.bashrc
 source ~/.bashrc
