@@ -173,12 +173,18 @@ Node.js: v24.10.0
 Yarn: 1.22.1
 ```
 
+永久保存配置
+```sh
+echo 'export PATH="/root/.local/share/solana/install/active_release/bin:$PATH" ' >> ~/.bashrc
+source ~/.bashrc
+```
+
 检查安装的依赖
 ```sh
 rustc --version && solana --version && anchor --version && surfpool --version && node --version && yarn --version
 ```
 
-安装wsl插件到vscode
+安装wsl插件到vscode,请查看如下网址
 ```sh
 https://code.visualstudio.com/docs/remote/wsl-tutorial
 ```
