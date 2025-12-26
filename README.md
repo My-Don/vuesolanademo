@@ -203,5 +203,8 @@ Google Antigravity安装教程
 步骤二: 安装Proxifier, 网址https://www.proxifier.com/
 步骤三: 配置Proxifier教程https://www.cnblogs.com/wushiyiwuzhong/p/17809020.html
 步骤四: 配置Proxifier代理与规则,并登录教程https://cloud.tencent.com/developer/article/2592564
+步骤五: 打开Antigravity后,安装chinese,solidity插件
+步骤六: 配置Antigravity编辑器语言, Antigravity基于VS Code开发，可通过命令面板(Ctrl+Shift+P)打开搜索框,输入"Configure Display Language"，点击设置中文即可.
+步骤七: 配置Antigravity编辑器回复中文或者其它的技巧,教程https://www.cnblogs.com/javastack/p/19396292
 ```
 
