@@ -197,4 +197,9 @@ v24.10.0
 ```sh
 https://code.visualstudio.com/docs/remote/wsl-tutorial
 ```
+其它的
+步骤一: 安装Google Antigravity，网址https://antigravity.google/
+步骤二: 安装Proxifier, 网址https://www.proxifier.com/
+步骤三: 配置Proxifier教程https://www.cnblogs.com/wushiyiwuzhong/p/17809020.html
+步骤四: 配置Proxifier代理与规则,并登录教程https://cloud.tencent.com/developer/article/2592564
 
