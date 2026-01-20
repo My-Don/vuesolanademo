@@ -155,5 +155,75 @@ curl --proto '=https' --tlsv1.2 -sSfL https://solana-install.solana.workers.dev 
 ### 永久配置 PATH
 
 ```bash
-echo 'export
+echo 'export PATH="/root/.local/share/solana/install/active_release/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
 ```
+
+### 验证安装
+
+```bash
+rustc --version \
+&& solana --version \
+&& anchor --version \
+&& surfpool --version \
+&& node --version \
+&& yarn --version
+```
+
+---
+
+## 🧩 VS Code + WSL 推荐配置
+
+* VS Code：[https://code.visualstudio.com/](https://code.visualstudio.com/)
+* WSL 插件官方教程：
+  [https://code.visualstudio.com/docs/remote/wsl-tutorial](https://code.visualstudio.com/docs/remote/wsl-tutorial)
+
+> 安装后可直接在 VS Code 中打开 WSL 里的项目目录
+
+---
+
+## 🤖 Google Antigravity（可选）
+
+### 安装步骤
+
+1. 官网：[https://antigravity.google/](https://antigravity.google/)
+2. Proxifier：[https://www.proxifier.com/](https://www.proxifier.com/)
+3. Proxifier 配置教程：
+   [https://www.cnblogs.com/wushiyiwuzhong/p/17809020.html](https://www.cnblogs.com/wushiyiwuzhong/p/17809020.html)
+4. 代理与规则说明：
+   [https://cloud.tencent.com/developer/article/2592564](https://cloud.tencent.com/developer/article/2592564)
+
+### 推荐插件
+
+* `chinese`
+* `solidity`
+
+### 切换中文界面
+
+* `Ctrl + Shift + P`
+* 输入 `Configure Display Language`
+
+---
+
+## 📖 参考资料
+
+* Vue：[https://vuejs.org/](https://vuejs.org/)
+* Vite：[https://vite.dev/](https://vite.dev/)
+* Solana：[https://docs.solana.com/](https://docs.solana.com/)
+* Anchor：[https://book.anchor-lang.com/](https://book.anchor-lang.com/)
+
+---
+
+## ✅ 完成效果
+
+你将获得：
+
+* ✔ Vue 3 + Vite 前端开发环境
+* ✔ Windows 下稳定的 Solana / Anchor 开发环境
+* ✔ 可直接用于 DApp 开发的工程模板
+
+---
+
+## 📄 License
+
+MIT
