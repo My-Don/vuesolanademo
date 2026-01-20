@@ -1,210 +1,159 @@
 # vuesolanademo
 
-This template should help get you started developing with Vue 3 in Vite.
+<p align="center">
+  <strong>Vue 3 + Vite + Solana（WSL2）开发环境示例项目</strong>
+</p>
 
-## Recommended IDE Setup
+<p align="center">
+  <img src="https://img.shields.io/badge/Vue-3.x-42b883" />
+  <img src="https://img.shields.io/badge/Vite-latest-646cff" />
+  <img src="https://img.shields.io/badge/Solana-CLI-14f195" />
+  <img src="https://img.shields.io/badge/Platform-Windows%2011%20%2B%20WSL2-blue" />
+</p>
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## 📌 项目简介
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+`vuesolanademo` 是一个用于演示 **Vue 3 + Vite 前端项目** 与 **Solana 智能合约开发环境（WSL2 + Ubuntu）** 的完整示例。
 
-## Customize configuration
+适合人群：
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+* Solana 初学者
+* Web3 / DApp 前端开发者
+* Windows 用户（不想直接用原生 Linux）
 
-## Project Setup
+---
 
-```sh
+## 🧱 技术栈
+
+* **前端**：Vue 3、Vite
+* **区块链**：Solana、Anchor
+* **运行环境**：Windows 11 + WSL2 (Ubuntu)
+* **工具链**：Node.js、Yarn、Rust
+* **IDE**：VS Code / Google Antigravity
+
+---
+
+## 📂 项目结构（示例）
+
+```
+vuesolanademo/
+├─ src/                # Vue 前端源码
+├─ public/
+├─ package.json
+├─ vite.config.ts
+├─ README.md
+└─ docs/               # 开发环境 & 教程文档（可扩展）
+```
+
+---
+
+## 🚀 快速开始（Vue 前端）
+
+### 1️⃣ 安装依赖
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 2️⃣ 本地开发
 
-```sh
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+### 3️⃣ 构建生产版本
 
-```sh
+```bash
 npm run build
 ```
-### windows 11安装wsl, 安装solana依赖, 配置wsl插件
-先确认windows11是否开启了虚拟化,没开的话，操作如下
-华硕主板的 BIOS/UEFI 中开启虚拟化技术（通常指 Intel VT-x 或 AMD-V）是一个很常见的操作。以下是详细步骤，适用于大多数现代华硕主板。
 
-核心步骤总览
-进入 BIOS/UEFI 设置界面。
+---
 
-找到与虚拟化相关的选项（通常在 高级 或 CPU 配置 菜单中）。
+## 🛠️ 开发环境准备（Windows 11 + WSL2）
 
-将虚拟化选项设置为 “开启”。
+### 一、开启 CPU 虚拟化（BIOS）
 
-保存并退出 BIOS。
+> ⚠️ WSL2 必须开启虚拟化
 
-详细图文步骤
-第一步：进入 BIOS/UEFI 设置
-重启或开机。
+* 开机按 `Del` / `F2` 进入 BIOS
+* `Advanced → CPU Configuration`
 
-在自检（POST）画面出现时，立即并连续地按键盘上的 Del 键或 F2 键（绝大多数华硕主板使用这两个键，开机画面上通常也会有提示）。
+**Intel CPU**
 
-成功进入 BIOS 界面，界面通常是图形化的（UEFI BIOS）。
-
-提示：如果你的系统是 Windows 10/11 且启用了“快速启动”，可能难以按出BIOS。可以在系统内：
-
-打开「设置」->「更新与安全」->「恢复」->「高级启动」下的“立即重新启动” -> 「疑难解答」-> 「高级选项」-> 「UEFI固件设置」-> 「重启」。
-
-第二步：找到虚拟化选项（关键）
-BIOS 界面有多种模式，通常按 F7 可以在“简易模式”和“高级模式”之间切换。请进入“高级模式”。
-
-虚拟化选项的路径主要有两种，取决于主板和BIOS版本：
-
-路径 A（最常见）：
-
-进入 Advanced（高级） 选项卡。
-
-选择 CPU Configuration（CPU 配置）。
-
-向下滚动，找到与虚拟化技术相关的选项，例如：
-
-对于 Intel CPU： Intel (R) Virtualization Technology 或 Intel VT-x。将其设置为 Enabled。
-
-可能还有一个 Intel VT-d（用于直接I/O虚拟化），如果看到，也可以一并开启。
-
-对于 AMD CPU： SVM Mode（安全虚拟机模式）。将其设置为 Enabled。
-
-路径 B（另一种可能）：
-
-在 Advanced（高级） 选项卡下。
-
-找到 System Agent Configuration（系统代理配置） 或 North Bridge。
-
-进入后，找到 VT-d 或类似的虚拟化选项，将其设置为 Enabled。
-
-注意：在一些老主板或特定系列的BIOS中，选项也可能在 Advanced -> CPU Configuration -> Secure Virtual Machine Mode（AMD）中。
-
-第三步：保存并退出
-按 F10 键，这是保存更改并退出的通用快捷键。
-
-会弹出确认窗口，询问是否保存更改并重置。
-
-选择 Yes 或按 Enter 确认。
-
-电脑将自动重启。
-
-验证是否开启成功
-重启进入 Windows 后，可以通过以下方法验证：
-
-任务管理器查看：
-
-按 Ctrl + Shift + Esc 打开任务管理器。
-
-切换到 “性能” 选项卡。
-
-点击 “CPU”，在右下角查看 “虚拟化” 状态。如果显示 “已启用”，则表示成功。
-
-使用命令行验证（Intel CPU）：
-
-以管理员身份打开“命令提示符”或“PowerShell”。
-
-输入命令：systeminfo
-
-在输出信息中查找 “Hyper-V 要求” 部分，如果看到 “虚拟机监视器模式扩展: 是”，则说明虚拟化已启用。
-
-
-powershell管理员模式下打开终端
-
-设置powershell终端临时HTTP/HTTPS 代理
-```sh
-$env:HTTP_PROXY="http://127.0.0.1:7890"
-$env:HTTPS_PROXY="http://127.0.0.1:7890"
+```
+Intel Virtualization Technology → Enabled
+Intel VT-d → Enabled（可选）
 ```
 
-```sh
+**AMD CPU**
+
+```
+SVM Mode → Enabled
+```
+
+保存并退出（F10）。
+
+---
+
+### 二、安装 WSL2
+
+#### PowerShell（管理员）
+
+```powershell
 wsl --install
 ```
 
-查看可安装的ubuntu版本
-```sh
+查看可安装系统：
+
+```powershell
 wsl --list --online
 ```
 
-安装ubuntu
-```sh
-wsl --install -d <DistroName>
-```
-powershell终端关闭wsl
-```sh
-wsl --shutdown
+安装 Ubuntu：
+
+```powershell
+wsl --install -d Ubuntu
 ```
 
-配置.wslconfig
-打开C盘，路径C:\Users\Administrator,添加一个.wslconfig文件并保存,内容如下
-```sh
+---
+
+### 三、WSL 网络 & 代理配置（推荐）
+
+#### `.wslconfig`
+
+路径：
+
+```
+C:\Users\Administrator\.wslconfig
+```
+
+```ini
 [wsl2]
-# 网络设置
 networkingMode = mirrored
 autoProxy = true
 ```
-打开ubuntu子系统即wsl终端,输入以下命令
-```sh
+
+#### Ubuntu 中设置代理
+
+```bash
 export http_proxy="http://127.0.0.1:7890"
 export https_proxy="http://127.0.0.1:7890"
 ```
-安装solana相关的依赖
-```sh
+
+---
+
+## ⛓️ Solana 开发环境安装（WSL Ubuntu）
+
+### 一键安装（官方集成脚本）
+
+```bash
 curl --proto '=https' --tlsv1.2 -sSfL https://solana-install.solana.workers.dev | bash
 ```
-控制台打印数据如下即安装成功:
-```sh
-Installed Versions:
-Rust: rustc 1.91.1 (ed61e7d7e 2025-11-07)
-Solana CLI: solana-cli 3.0.10 (src:96c3a851; feat:3604001754, client:Agave)
-Anchor CLI: anchor-cli 0.32.1
-Surfpool CLI: surfpool 0.12.0
-Node.js: v24.10.0
-Yarn: 1.22.1
-```
 
-永久保存环境变量
-```sh
-echo 'export PATH="/root/.local/share/solana/install/active_release/bin:$PATH" ' >> ~/.bashrc
-source ~/.bashrc
-```
+### 永久配置 PATH
 
-检查安装的依赖
-```sh
-rustc --version && solana --version && anchor --version && surfpool --version && node --version && yarn --version
+```bash
+echo 'export
 ```
-控制台打印数据如下即安装成功:
-```sh
-rustc 1.92.0 (ded5c06cf 2025-12-08)
-solana-cli 3.0.13 (src:90098d26; feat:3604001754, client:Agave)
-anchor-cli 0.32.1
-surfpool 1.0.0-rc1
-v24.10.0
-1.22.22
-```
-
-安装wsl插件到vscode,请查看如下网址
-```sh
-https://code.visualstudio.com/docs/remote/wsl-tutorial
-```
-Google Antigravity安装教程
-```sh
-步骤一: 安装Google Antigravity，网址https://antigravity.google/
-步骤二: 安装Proxifier, 网址https://www.proxifier.com/
-步骤三: 配置Proxifier教程https://www.cnblogs.com/wushiyiwuzhong/p/17809020.html
-步骤四: 配置Proxifier代理与规则,并登录教程https://cloud.tencent.com/developer/article/2592564
-步骤五: 打开Antigravity后,安装chinese,solidity插件
-步骤六: 配置Antigravity编辑器语言, Antigravity基于VS Code开发，可通过命令面板(Ctrl+Shift+P)打开搜索框,输入"Configure Display Language"，点击设置中文即可.
-步骤七: 配置Antigravity编辑器回复中文或者其它的技巧,教程https://www.cnblogs.com/javastack/p/19396292
-```
-
